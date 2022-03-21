@@ -92,4 +92,4 @@ buttonClear.addEventListener('click', function clear() {
   Object.values(inputs).forEach(input => {
     input.value = '';
   })
-}
+});
