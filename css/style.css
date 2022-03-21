@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300,0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900;1&display=swap');
+
+body {
+    padding: 0 20px 0 20px;
+    display: grid;
+    grid-gap: 15px;
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+section {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 15px;
+}
+
+table {
+    width: 100%;
+    padding: 10px;
+    border-collapse: collapse;
+    overflow: auto;
+}
+
+tr {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+td, th {
+    border: 1px solid black;
+}
+.form-element {
+    display: grid;
+    grid-gap: 10px;
+    height: 150px;
+}
+
+.form-element>h3 {
+    margin: 0;
+}
+
+.form-group {
+    display: grid;
+    grid-gap: 5px;
+}
+
+label {
+    display: block;
+}
+
+input {
+    outline: none;
+    border: 0;
+    width: 100%;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    padding: 0px;
+}
+
+input:focus {
+    border-bottom: 3px solid black;
+}
+
+#hasil {
+    width: 50%;
+}
+
+#hasil>tr {
+    height: 50px;
+    text-align: left;
+}
+
+#hasil>tr>td, #hasil>tr>th {
+    padding-left: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media only-screen and (max-width: 900px) {
+    section {
+        grid-template-columns: auto;
+    }
+}
