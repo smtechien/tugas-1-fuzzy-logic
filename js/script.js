@@ -256,7 +256,7 @@ const fuzzySetSU = [{
   {
     nomor: 2,
     nama: 'Normal',
-    fungsi: String.raw `$$ \mu_text{SU Normal}(n) = \begin{cases} \text{0}, & x \leq 24  \text{ atau } x \geq 28 \\ \frac{x-24}{1}, & 24 < x < 25  \\ \text{1}, & 25 \leq x \leq 27 \\ \frac{28-x}{1} & 27 < x < 28 \end{cases} $$`,
+    fungsi: String.raw `$$ \mu_\text{SU Normal}(n) = \begin{cases} \text{0}, & x \leq 24  \text{ atau } x \geq 28 \\ \frac{x-24}{1}, & 24 < x < 25  \\ \text{1}, & 25 \leq x \leq 27 \\ \frac{28-x}{1} & 27 < x < 28 \end{cases} $$`,
     proses: (value) => {
       if (value <= 24) {
         const prosesHitung = String.raw `$$ \mu_\text{SU Normal}(${value}) = \text{0} $$`;
