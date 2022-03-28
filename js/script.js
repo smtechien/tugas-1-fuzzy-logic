@@ -71,7 +71,7 @@ buttonProcess.addEventListener("click", function process() {
   let headFungsi = document.createElement("th");
   let headProses = document.createElement("th")
   let headNoValue = document.createTextNode("No.");
-  let headNamaValue = document.createTextNode("Variabel");
+  let headNamaValue = document.createTextNode("Kategori");
   let headFungsiValue = document.createTextNode("Fungsi Keanggotaan");
   let headProsesValue = document.createTextNode("Hasil");
   headNo.appendChild(headNoValue);
