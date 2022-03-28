@@ -13,7 +13,9 @@
 
 <body>
   <h1>Tugas Program Fuzzy Logic</h1>
-  <section id="sectionInput">
+  <!-- Menentukan nilai keanggotaan fuzzy -->
+  <h2>Tugas Program 1</h2>
+  <section class="sectionInput">
     <table id="table">
       <tr>
         <th>Kurva Fungsi Keanggotaan</th>
@@ -34,10 +36,114 @@
 
   </section>
 
-  <h1 class="hidden">Hasil</h1>
+  <h2 id="hidden">Hasil Program 1</h2>
   <table id="hasil">
 
   </table>
+
+  <!-- FIS Tsukamoto Method -->
+  <hr>
+  <h2>Tugas Program 2</h2>
+  <section class="sectionInput">
+    <table id="table">
+      <tr>
+        <th>Variabel</th>
+        <th>Kurva Fungsi Keanggotaan</th>
+      </tr>
+      <tr>
+        <td>Curah hujan</td>
+        <td><img src="img/grafik_curah_hujan.png" alt="fungsi keanggotaan curah hujan"></td>
+      </tr>
+      <tr>
+        <td>Suhu</td>
+        <td><img src="img/grafik_suhu.png" alt="fungsi keanggotaan suhu"></td>
+      </tr>
+    </table>
+    <h3>Inferensi</h3>
+    <table id="inferensiTable">
+      <tr>
+        <th>No.</th>
+        <th colspan="2">IF</th>
+        <th>THEN</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Tinggi</td>
+        <td>Dingin</td>
+        <td>Banjir</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Tinggi</td>
+        <td>Normal</td>
+        <td>Banjir</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Tinggi</td>
+        <td>Panas</td>
+        <td>Banjir</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Sedang</td>
+        <td>Dingin</td>
+        <td>Banjir</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Sedang</td>
+        <td>Normal</td>
+        <td>Banjir</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Sedang</td>
+        <td>Panas</td>
+        <td>Tidak Banjir</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Rendah</td>
+        <td>Dingin</td>
+        <td>Tidak banjir</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Rendah</td>
+        <td>Normal</td>
+        <td>Tidak banjir</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Rendah</td>
+        <td>Panas</td>
+        <td>Tidak banjir</td>
+      </tr>
+    </table>
+    <div class="form-element">
+      <h3>Form Perhitungan</h3>
+      <div class="form-group">
+        <label for="value1-2">Masukan nilai curah hujan</label>
+        <input type="number" name="value1-2" id="value1-2">
+        <label for="value2-2">Masukan nilai suhu</label>
+        <input type="number" name="value2-2" id="value2-2">
+      </div>
+      <button id="clear2">Clear</button>
+      <button id="process2">Process</button>
+    </div>
+
+  </section>
+  <h2 id="hidden2">Hasil Program 1</h2>
+  <h3 id="hidden21">Curah Hujan</h3>
+  <table id="hasilCH">
+
+  </table>
+  <h3 id="hidden22">Suhu</h3>
+  <table id="hasilSU">
+  </table>
+  <p id="hasilZ"></p>
+  <hr>
   <section>
     <h4>Anggota Kelompok</h4>
     <ol>
