@@ -124,10 +124,10 @@ buttonClear.addEventListener('click', function clear() {
 const fuzzySetCH = [{
     nomor: 1,
     nama: 'Rendah',
-    fungsi: String.raw `$$ f(n) = \begin{cases} \text{1}, & x \leq 100 \\ \frac{150-x}{50}, & 100 < x /leq 150  \\ 0, & x > 150 \end{cases} $$`,
+    fungsi: String.raw `$$ \mu_\text{CH Rendah}(n) = \begin{cases} \text{1}, & x \leq 100 \\ \frac{150-x}{50}, & 100 < x /leq 150  \\ 0, & x > 150 \end{cases} $$`,
     proses: (value) => {
       if (value <= 100) {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{1} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{CH Rendah}(${value}) = \text{1} $$`;
         const hasilHitung = 1;
         return {
           prosesHitung,
@@ -135,13 +135,13 @@ const fuzzySetCH = [{
         };
       } else if (value <= 150) {
         const hasilHitung = (150 - value) / (50);
-        const prosesHitung = String.raw `$$ \begin{align*} f(${value}) &= \frac{150-${value}}{50} \\ &= \frac{${150-value}}{50} \\ &= ${hasilHitung} \end{align*}$$`;
+        const prosesHitung = String.raw `$$ \begin{align*} \mu_\text{CH Rendah}(${value}) &= \frac{150-${value}}{50} \\ &= \frac{${150-value}}{50} \\ &= ${hasilHitung} \end{align*}$$`;
         return {
           prosesHitung,
           hasilHitung
         };
       } else {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{0} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{CH Rendah}(${value}) = \text{0} $$`;
         const hasilHitung = 0;
         return {
           prosesHitung,
@@ -153,10 +153,10 @@ const fuzzySetCH = [{
   {
     nomor: 2,
     nama: 'Sedang',
-    fungsi: String.raw `$$ f(n) = \begin{cases} \text{0}, & x < 100  \text{ atau } x > 350 \\ \frac{x-100}{50}, & 100 \leq x < 150  \\ \text{1}, & 150 \leq x \leq 300 \\ \frac{350-x}{50} & 300 < x \leq 350 \end{cases} $$`,
+    fungsi: String.raw `$$ \mu_\text{CH Sedang}(n) = \begin{cases} \text{0}, & x < 100  \text{ atau } x > 350 \\ \frac{x-100}{50}, & 100 \leq x < 150  \\ \text{1}, & 150 \leq x \leq 300 \\ \frac{350-x}{50} & 300 < x \leq 350 \end{cases} $$`,
     proses: (value) => {
       if (value < 100) {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{0} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{CH Rendah}(${value}) = \text{0} $$`;
         const hasilHitung = 0;
         return {
           prosesHitung,
@@ -164,13 +164,13 @@ const fuzzySetCH = [{
         };
       } else if (value < 150) {
         const hasilHitung = (value - 100) / 50;
-        const prosesHitung = String.raw `$$ \begin{align*} f(${value}) &= \frac{${value}-100}{50} \\ &= \frac{${value-100}}{50} \\ &= ${hasilHitung} \end{align*}$$`;
+        const prosesHitung = String.raw `$$ \begin{align*} \mu_\text{CH Sedang}(${value}) &= \frac{${value}-100}{50} \\ &= \frac{${value-100}}{50} \\ &= ${hasilHitung} \end{align*}$$`;
         return {
           prosesHitung,
           hasilHitung
         };
       } else if (value <= 300) {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{1} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{CH Sedang}(${value}) = \text{1} $$`;
         const hasilHitung = 1;
         return {
           prosesHitung,
@@ -178,13 +178,13 @@ const fuzzySetCH = [{
         };
       } else if (value <= 350) {
         const hasilHitung = (350 - value) / 50;
-        const prosesHitung = String.raw `$$ \begin{align*} f(${value}) &= \frac{350-${value}}{50} \\ &= \frac{${350-value}}{50} \\ &= ${hasilHitung} \end{align*}$$`;
+        const prosesHitung = String.raw `$$ \begin{align*} \mu_\text{CH Sedang}(${value}) &= \frac{350-${value}}{50} \\ &= \frac{${350-value}}{50} \\ &= ${hasilHitung} \end{align*}$$`;
         return {
           prosesHitung,
           hasilHitung
         };
       } else {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{0} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{CH Sedang}(${value}) = \text{0} $$`;
         const hasilHitung = 0;
         return {
           prosesHitung,
@@ -196,10 +196,10 @@ const fuzzySetCH = [{
   {
     nomor: 3,
     nama: 'Tinggi',
-    fungsi: String.raw `$$ f(n) = \begin{cases} \text{0}, & x < 300 \\ \frac{x-300}{50}, & 300 < x < 350  \\ 1, & x \geq 350 \end{cases} $$`,
+    fungsi: String.raw `$$ \mu_\text{CH Tinggi}(n) = \begin{cases} \text{0}, & x < 300 \\ \frac{x-300}{50}, & 300 < x < 350  \\ 1, & x \geq 350 \end{cases} $$`,
     proses: (value) => {
       if (value < 300) {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{0} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{CH Tinggi}(${value}) = \text{0} $$`;
         const hasilHitung = 0;
         return {
           prosesHitung,
@@ -207,13 +207,13 @@ const fuzzySetCH = [{
         };
       } else if (value <= 350) {
         const hasilHitung = (value - 300) / 50;
-        const prosesHitung = String.raw `$$ \begin{align*} f(${value}) &= \frac{${value}-300}{50} \\ &= \frac{${value-300}}{50} \\ &= ${hasilHitung} \end{align*}$$`;
+        const prosesHitung = String.raw `$$ \mu_\text{CH Tinggi}{align*} f(${value}) &= \frac{${value}-300}{50} \\ &= \frac{${value-300}}{50} \\ &= ${hasilHitung} \end{align*}$$`;
         return {
           prosesHitung,
           hasilHitung
         };
       } else {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{1} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{CH Tinggi}(${value}) = \text{1} $$`;
         const hasilHitung = 1;
         return {
           prosesHitung,
@@ -227,10 +227,10 @@ const fuzzySetCH = [{
 const fuzzySetSU = [{
     nomor: 1,
     nama: 'Dingin',
-    fungsi: String.raw `$$ f(n) = \begin{cases} \text{1}, & x < 24 \\ \frac{25-x}{1}, & 24 \leq x < 25  \\ 0, & x \geq 150 \end{cases} $$`,
+    fungsi: String.raw `$$ \mu_\text{SU Dingin}(n) = \begin{cases} \text{1}, & x < 24 \\ \frac{25-x}{1}, & 24 \leq x < 25  \\ 0, & x \geq 150 \end{cases} $$`,
     proses: (value) => {
       if (value < 24) {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{1} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{SU Dingin}(${value}) = \text{1} $$`;
         const hasilHitung = 1;
         return {
           prosesHitung,
@@ -238,13 +238,13 @@ const fuzzySetSU = [{
         };
       } else if (value < 25) {
         const hasilHitung = (25 - value) / (1);
-        const prosesHitung = String.raw `$$ \begin{align*} f(${value}) &= \frac{25-${value}}{1} \\ &= \frac{${25-value}}{1} \\ &= ${hasilHitung} \end{align*}$$`;
+        const prosesHitung = String.raw `$$ \begin{align*} \mu_\text{SU Dingin}(${value}) &= \frac{25-${value}}{1} \\ &= \frac{${25-value}}{1} \\ &= ${hasilHitung} \end{align*}$$`;
         return {
           prosesHitung,
           hasilHitung
         };
       } else {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{0} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{SU Dingin}(${value}) = \text{0} $$`;
         const hasilHitung = 0;
         return {
           prosesHitung,
@@ -256,10 +256,10 @@ const fuzzySetSU = [{
   {
     nomor: 2,
     nama: 'Normal',
-    fungsi: String.raw `$$ f(n) = \begin{cases} \text{0}, & x \leq 24  \text{ atau } x \geq 28 \\ \frac{x-24}{1}, & 24 < x < 25  \\ \text{1}, & 25 \leq x \leq 27 \\ \frac{28-x}{1} & 27 < x < 28 \end{cases} $$`,
+    fungsi: String.raw `$$ \mu_text{SU Normal}(n) = \begin{cases} \text{0}, & x \leq 24  \text{ atau } x \geq 28 \\ \frac{x-24}{1}, & 24 < x < 25  \\ \text{1}, & 25 \leq x \leq 27 \\ \frac{28-x}{1} & 27 < x < 28 \end{cases} $$`,
     proses: (value) => {
       if (value <= 24) {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{0} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{SU Normal}(${value}) = \text{0} $$`;
         const hasilHitung = 0;
         return {
           prosesHitung,
@@ -267,13 +267,13 @@ const fuzzySetSU = [{
         };
       } else if (value < 25) {
         const hasilHitung = (value - 24) / 1;
-        const prosesHitung = String.raw `$$ \begin{align*} f(${value}) &= \frac{${value}-24}{1} \\ &= \frac{${value-24}}{1} \\ &= ${hasilHitung} \end{align*}$$`;
+        const prosesHitung = String.raw `$$ \begin{align*} \mu_\text{SU Normal}(${value}) &= \frac{${value}-24}{1} \\ &= \frac{${value-24}}{1} \\ &= ${hasilHitung} \end{align*}$$`;
         return {
           prosesHitung,
           hasilHitung
         };
       } else if (value <= 27) {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{1} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{SU Normal}(${value}) = \text{1} $$`;
         const hasilHitung = 1;
         return {
           prosesHitung,
@@ -281,13 +281,13 @@ const fuzzySetSU = [{
         };
       } else if (value < 28) {
         const hasilHitung = (28 - value) / 1;
-        const prosesHitung = String.raw `$$ \begin{align*} f(${value}) &= \frac{28-${value}}{1} \\ &= \frac{${28-value}}{1} \\ &= ${hasilHitung} \end{align*}$$`;
+        const prosesHitung = String.raw `$$ \begin{align*} \mu_\text{SU Normal}(${value}) &= \frac{28-${value}}{1} \\ &= \frac{${28-value}}{1} \\ &= ${hasilHitung} \end{align*}$$`;
         return {
           prosesHitung,
           hasilHitung
         };
       } else {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{0} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{SU Normal}(${value}) = \text{0} $$`;
         const hasilHitung = 0;
         return {
           prosesHitung,
@@ -299,10 +299,10 @@ const fuzzySetSU = [{
   {
     nomor: 3,
     nama: 'Panas',
-    fungsi: String.raw `$$ f(n) = \begin{cases} \text{0}, & x \leq 27 \\ \frac{x-27}{1}, & 27 < x < 28  \\ 1, & x \geq 28 \end{cases} $$`,
+    fungsi: String.raw `$$ \mu_\text{SU Panas}(n) = \begin{cases} \text{0}, & x \leq 27 \\ \frac{x-27}{1}, & 27 < x < 28  \\ 1, & x \geq 28 \end{cases} $$`,
     proses: (value) => {
       if (value <= 27) {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{0} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{SU Panas}(${value}) = \text{0} $$`;
         const hasilHitung = 0;
         return {
           prosesHitung,
@@ -310,13 +310,13 @@ const fuzzySetSU = [{
         };
       } else if (value < 28) {
         const hasilHitung = (value - 27) / 1;
-        const prosesHitung = String.raw `$$ \begin{align*} f(${value}) &= \frac{${value}-27}{1} \\ &= \frac{${value-27}}{1} \\ &= ${hasilHitung} \end{align*}$$`;
+        const prosesHitung = String.raw `$$ \begin{align*} \mu_\text{SU Panas}(${value}) &= \frac{${value}-27}{1} \\ &= \frac{${value-27}}{1} \\ &= ${hasilHitung} \end{align*}$$`;
         return {
           prosesHitung,
           hasilHitung
         };
       } else {
-        const prosesHitung = String.raw `$$ f(${value}) = \text{1} $$`;
+        const prosesHitung = String.raw `$$ \mu_\text{SU Panas}(${value}) = \text{1} $$`;
         const hasilHitung = 1;
         return {
           prosesHitung,
@@ -481,6 +481,66 @@ buttonProcess2.addEventListener("click", function process() {
   const resultRule7 = tidakBanjir(rule7);
   const resultRule8 = tidakBanjir(rule8);
   const resultRule9 = tidakBanjir(rule9);
+
+  const thRule = document.getElementById('thRule');
+  const thRuleValue = document.createElement('th');
+  const thRuleValueTh = document.createTextNode('Hasil Rule');
+  thRule.appendChild(thRuleValue);
+  thRuleValue.appendChild(thRuleValueTh);
+
+  const tableRule1 = document.getElementById('rule1');
+  const tableRule1Add = document.createElement('td');
+  const tableRule1Result = document.createTextNode(String.raw`$$ \alpha-predikat_1 = min(${chTinggi};${suDingin}) = ${rule1} $$`);
+  tableRule1Add.appendChild(tableRule1Result);
+  tableRule1.appendChild(tableRule1Add);
+
+  const tableRule2 = document.getElementById('rule2');
+  const tableRule2Add = document.createElement('td');
+  const tableRule2Result = document.createTextNode(String.raw`$$ \alpha -predikat_2 = min(${chTinggi};${suNormal}) = ${rule2} $$`);
+  tableRule2Add.appendChild(tableRule2Result);
+  tableRule2.appendChild(tableRule2Add);
+
+  const tableRule3 = document.getElementById('rule3');
+  const tableRule3Add = document.createElement('td');
+  const tableRule3Result = document.createTextNode(String.raw`$$ \alpha -predikat_3 = min(${chTinggi};${suPanas}) = ${rule3} $$`);
+  tableRule3Add.appendChild(tableRule3Result);
+  tableRule3.appendChild(tableRule3Add);
+
+  const tableRule4 = document.getElementById('rule4');
+  const tableRule4Add = document.createElement('td');
+  const tableRule4Result = document.createTextNode(String.raw`$$ \alpha -predikat_4 = min(${chSedang};${suDingin}) = ${rule4} $$`);
+  tableRule4Add.appendChild(tableRule4Result);
+  tableRule4.appendChild(tableRule4Add);
+
+  const tableRule5 = document.getElementById('rule5');
+  const tableRule5Add = document.createElement('td');
+  const tableRule5Result = document.createTextNode(String.raw`$$ \alpha -predikat_5 = min(${chSedang};${suNormal}) = ${rule5} $$`);
+  tableRule5Add.appendChild(tableRule5Result);
+  tableRule5.appendChild(tableRule5Add);
+
+  const tableRule6 = document.getElementById('rule6');
+  const tableRule6Add = document.createElement('td');
+  const tableRule6Result = document.createTextNode(String.raw`$$ \alpha -predikat_6 = min(${chSedang};${suPanas}) = ${rule6} $$`);
+  tableRule6Add.appendChild(tableRule6Result);
+  tableRule6.appendChild(tableRule6Add);
+
+  const tableRule7 = document.getElementById('rule7');
+  const tableRule7Add = document.createElement('td');
+  const tableRule7Result = document.createTextNode(String.raw`$$ \alpha -predikat_7= min(${chRendah};${suDingin})= ${rule7} $$`);
+  tableRule7Add.appendChild(tableRule7Result);
+  tableRule7.appendChild(tableRule7Add);
+
+  const tableRule8 = document.getElementById('rule8');
+  const tableRule8Add = document.createElement('td');
+  const tableRule8Result = document.createTextNode(String.raw`$$ \alpha -predikat_8 = min(${chRendah};${suNormal}) = ${rule8} $$`);
+  tableRule8Add.appendChild(tableRule8Result);
+  tableRule8.appendChild(tableRule8Add);
+
+  const tableRule9 = document.getElementById('rule9');
+  const tableRule9Add = document.createElement('td');
+  const tableRule9Result = document.createTextNode(String.raw`$$ \alpha -predikat_9 = min(${chRendah};${suPanas}) = ${rule9} $$`);
+  tableRule9Add.appendChild(tableRule9Result);
+  tableRule9.appendChild(tableRule9Add);
 
   const zAkhir = ((rule1 * resultRule1) + (rule2 * resultRule2) + (rule3 * resultRule3) + (rule4 * resultRule4) + (rule5 * resultRule5) + (rule5 * resultRule5) + (rule6 * resultRule6) + (rule7 * resultRule7) + (rule8 * resultRule8) + (rule9 * resultRule9)) / (resultRule1 + resultRule2 + resultRule3  + resultRule4 + resultRule5 + resultRule6 + resultRule7 + resultRule8 + resultRule9);
 
